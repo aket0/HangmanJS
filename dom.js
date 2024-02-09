@@ -27,7 +27,7 @@ let errorCompt = 0;
 
 let point = 0;
 
-let win = null;
+let win;
 
 
 

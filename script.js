@@ -77,14 +77,6 @@ function checkWin(win){
         frame.appendChild(title)
         frame.appendChild(retrybtn)
     }
-    if(!win){
-        divSpan.style.display = "none";
-        tryBtn.style.display = "none";
-        input.style.display = "none";
-        let title = document.createElement("h2");
-        title.innerHTML = "you loose !"
-        frame.appendChild(title)
-        frame.appendChild(retrybtn)
-    }
+
     
 }
