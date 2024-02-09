@@ -1,4 +1,4 @@
-export let words = [
+let words = [
     "abandonner",
     "abandonné",
     "abattoir",
@@ -2742,3 +2742,14 @@ export let words = [
     "évoquer",
     "île"
 ];
+
+
+
+
+
+
+
+
+
+
+
