@@ -1,5 +1,8 @@
 
 let current = document.getElementById("main");
+current.style.backgroundImage = "url(./Images/background.jpg)"
+current.style.backgroundPosition = "bottom"
+current.style.backgroundSize = "cover"
 let frame = document.createElement("div");
 frame.style.display = "flex";
 frame.style.width = "100%"
@@ -7,6 +10,11 @@ frame.style.flexDirection = "column"
 frame.style.justifyContent = "center"
 frame.style.alignItems = "center";
 current.appendChild(frame);
+let title = document.createElement("h1");
+title.style.fontSize = "70px"
+title.style.fontFamily = "Protest Riot"
+title.innerText = "HangmanJS"
+frame.appendChild(title)
 let img = document.createElement("img");
 img.src = "./Images/1.png"
 img.style.width = "600px"
@@ -16,6 +24,11 @@ let divSpan = document.createElement("div");
 divSpan.style.display = "flex";
 divSpan.style.flexDirection = "row"
 divSpan.style.marginTop = "2%"
+divSpan.style.padding = "4%";
+divSpan.style.backgroundImage = "url(./Images/spanBackground.jpg)"
+divSpan.style.backgroundSize = "500px"
+divSpan.style.borderRadius = "15px"
+
 frame.appendChild(divSpan)
 
 let mysteryWord = randomWord(words);
@@ -44,8 +57,13 @@ for (let i = 0; i < mysteryWord.length; i++){
     divSpan.appendChild(span);
     letterSpans.push(span)
     span.style.fontSize = "50px"
-    span.style.border = "1px solid black"
-    span.style.padding = "15px" 
+    span.style.background= "transparent"
+    span.backgroundSize = "contain"
+
+    
+   
+    span.style.padding = "15px"
+     
     
 }
 
@@ -55,6 +73,7 @@ let input = document.createElement("input")
 input.maxLength = "1"
 input.minLength = "1"
 input.style.fontSize = "55px"
+input.style.width = "60px"
 frame.appendChild(input)
 
 
