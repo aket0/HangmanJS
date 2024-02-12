@@ -3,23 +3,11 @@ function randomWord(arr){
 }
 
 function checkValue(value, mysteryWord, letterSpans) {
-    if (letterSpans[i].innerText === value) {
-        alreadyGuessed = true;
-        
-    }
-}
-
-// Si la lettre a déjà été devinée, incrémenter le compteur d'erreurs
-if (alreadyGuessed) {
-    console.log("Letter already guessed!");
-    errorCompt++;
-    console.log("Errors:", errorCompt);
-} else {
     let foundIndexes = [];
     for (let i = 0; i < mysteryWord.length; i++) {
         if (mysteryWord[i] === value) {
             foundIndexes.push(i);
-        }
+        } 
     }
 
     if (foundIndexes.length > 0) {

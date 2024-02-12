@@ -129,8 +129,8 @@ tryBtn.style.textAlign = "center"
 tryBtn.style.color = "white"
 inputDiv.appendChild(tryBtn);
 
-let status = document.createElement("h2");
-status.innerHTML = "You've Beat The Rope !"
+let stat = document.createElement("h2");
+stat.innerHTML = "You've Beat The Rope !"
 
 let retrybtn = document.createElement("button")
 retrybtn.innerText ="Retry ?";
