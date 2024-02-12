@@ -52,7 +52,9 @@ function checkValue(value, mysteryWord, letterSpans) {
                 tryBtn.style.display = "none";
                 input.style.display = "none";
                 let status = document.createElement("h2");
-                status.innerHTML = "you are hanged !"
+                status.innerHTML = "😨💀 HANGED 💀😨"
+                status.style.fontFamily = "Protest Riot"
+                status.style.fontSize = "2em";
                 retrybtn.style.backgroundColor = "#F4E029"
                 row.appendChild(status)
                 row.appendChild(retrybtn)
@@ -72,7 +74,11 @@ function checkWin(win){
     if(win){
         divSpan.style.display = "none";
         tryBtn.style.display = "none";
-        input.style.display = "none";      
+        input.style.display = "none";
+        let stat = document.createElement("h2");
+        stat.innerHTML = "🫵 You've beat the rope ! 🫵"
+        stat.style.fontFamily = "Protest Riot"
+        stat.style.fontSize = "1.5em";      
         row.appendChild(stat)
         row.appendChild(retrybtn)
         retrybtn.style.backgroundColor = "#405F7C"
