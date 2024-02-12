@@ -3,6 +3,18 @@ function randomWord(arr){
 }
 
 function checkValue(value, mysteryWord, letterSpans) {
+    if (letterSpans[i].innerText === value) {
+        alreadyGuessed = true;
+        
+    }
+}
+
+// Si la lettre a déjà été devinée, incrémenter le compteur d'erreurs
+if (alreadyGuessed) {
+    console.log("Letter already guessed!");
+    errorCompt++;
+    console.log("Errors:", errorCompt);
+} else {
     let foundIndexes = [];
     for (let i = 0; i < mysteryWord.length; i++) {
         if (mysteryWord[i] === value) {
@@ -51,10 +63,11 @@ function checkValue(value, mysteryWord, letterSpans) {
                 divSpan.style.display = "none";
                 tryBtn.style.display = "none";
                 input.style.display = "none";
-                let title = document.createElement("h2");
-                title.innerHTML = "you loose !"
-                frame.appendChild(title)
-                frame.appendChild(retrybtn)
+                let status = document.createElement("h2");
+                status.innerHTML = "you are hanged !"
+                retrybtn.style.backgroundColor = "#F4E029"
+                row.appendChild(status)
+                row.appendChild(retrybtn)
                 break;
                    
     }
@@ -71,11 +84,13 @@ function checkWin(win){
     if(win){
         divSpan.style.display = "none";
         tryBtn.style.display = "none";
-        input.style.display = "none";
-        let title = document.createElement("h2");
-        title.innerHTML = "You have Beat The Rope !"
-        frame.appendChild(title)
-        frame.appendChild(retrybtn)
+        input.style.display = "none";      
+        row.appendChild(stat)
+        row.appendChild(retrybtn)
+        retrybtn.style.backgroundColor = "#405F7C"
+        header.style.backgroundColor = "#405F7C";
+        footer.style.backgroundColor = "#405F7C"
+       
     }
 
     
