@@ -25,7 +25,13 @@ frame.appendChild(header);
 let title = document.createElement("h1");
 title.style.fontSize = "3em"
 title.style.fontFamily = "Protest Riot"
-title.innerText = "HangmanJS"
+let first = document.createElement("span");
+let second = document.createElement("span");
+first.innerText = "Hangman"
+second.innerText = "JS"
+second.style.color = "#F4E029"
+title.appendChild(first);
+title.appendChild(second);
 header.appendChild(title)
 
 let row = document.createElement("div");
@@ -62,6 +68,9 @@ divSpan.width = "100vh"
 divSpan.style.flexDirection = "row"
 divSpan.style.marginTop = "1%"
 divSpan.style.justifyContent = "space-around"
+divSpan.style.background= "#CFA06C"
+divSpan.style.borderRadius = "5px";
+
 row.appendChild(divSpan)
 
 let mysteryWord = randomWord(words);
@@ -91,9 +100,7 @@ for (let i = 0; i < mysteryWord.length; i++){
     letterSpans.push(span)
     span.style.fontFamily = "Protest Riot"
     span.style.fontSize = "2em"
-    span.style.background= "#CFA06C"
-    span.style.borderRadius = "10%";
-    span.backgroundSize = "contain";
+   
     span.style.justifyContent = "space-around";
    
     span.style.padding = "1vw"
