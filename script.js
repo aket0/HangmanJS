@@ -23,20 +23,18 @@ function checkValue(value, mysteryWord, letterSpans) {
     }
    
     if (lettersGuessed.includes(value)) {
-        console.log("Already guessed this letter.");
-        errorCompt += 1;
-        console.log("Errors:", errorCompt);
+        errorCompt += 1; 
     } else {
         if (foundIndexes.length > 0) {
             foundIndexes.forEach(index => {
                 letterSpans[index].innerText = value;
                 point += 1;
-                console.log("Points:", point);
+               
             });
         } else {
-            console.log("WRONG");
+            
             errorCompt += 1;
-            console.log("Errors:", errorCompt);
+            
         }
         
         lettersGuessed.push(value);
@@ -89,7 +87,7 @@ function checkValue(value, mysteryWord, letterSpans) {
     if (point === mysteryWord.length) {
         win = true
         img.src = "./Images/11.png"
-        console.log("you Win !")
+       
     }
 }
 

@@ -74,7 +74,7 @@ divSpan.style.borderRadius = "5px";
 row.appendChild(divSpan)
 
 let mysteryWord = randomWord(words);
-console.log(mysteryWord);
+
 
 let letterSpans = [];
 
@@ -191,6 +191,4 @@ retrybtn.addEventListener("click", () => {
 })
 
 
-console.log(input.value)
-console.log(errorCompt.value);
 
