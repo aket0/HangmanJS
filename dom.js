@@ -1,4 +1,3 @@
-
 let current = document.getElementById("main");
 
 current.style.backgroundPosition = "top"
@@ -32,28 +31,37 @@ header.appendChild(title)
 let row = document.createElement("div");
 row.className = "row";
 row.style.width = "100%"
-row.style.height = "70vh"
+row.style.height = "55vmax"
 row.style.display = "flex";
 row.style.flexDirection = "column";
 row.style.justifyContent = "center"
 row.style.alignItems = "center";
-row.style.marginTop = "10%"
-row.style.marginBottom ="10%"
+row.style.marginTop = "5%"
+row.style.marginBottom ="2%"
 frame.appendChild(row)
+
+
 
 
 let img = document.createElement("img");
 img.src = "./Images/1.png"
-img.style.width = "30%"
+if (window.matchMedia("(min-width: 416px)").matches) {
+
+    row.style.marginTop ="10%"
+    img.style.width = "35vw"
+    row.appendChild(img);
+}else{
+img.style.width = "80vw"
 img.style.alignItems = "center"
 row.appendChild(img);
+}
 
 let divSpan = document.createElement("div");
 divSpan.style.display = "flex";
-divSpan.width = "80%"
+divSpan.width = "100vh"
 divSpan.style.flexDirection = "row"
 divSpan.style.marginTop = "1%"
-divSpan.style.justifyContent = "space-evenly"
+divSpan.style.justifyContent = "space-around"
 row.appendChild(divSpan)
 
 let mysteryWord = randomWord(words);
@@ -87,7 +95,7 @@ for (let i = 0; i < mysteryWord.length; i++){
     span.style.borderRadius = "10%";
     span.backgroundSize = "contain";
     span.style.justifyContent = "space-around";
-    span.style.marginRight = "2%"
+   
     span.style.padding = "1vw"
      
     
@@ -145,6 +153,7 @@ let footer = document.createElement("div");
 footer.style.backgroundColor = "#CFA06C"
 footer.style.textDecoration = "none";
 footer.style.width = '100%';
+footer.style.height = "20vw"
 footer.style.bottom = "0";
 footer.style.display = "flex"
 footer.style.flexDirection = "column"
@@ -177,3 +186,4 @@ retrybtn.addEventListener("click", () => {
 
 console.log(input.value)
 console.log(errorCompt.value);
+
