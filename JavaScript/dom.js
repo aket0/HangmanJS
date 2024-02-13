@@ -78,6 +78,8 @@ let mysteryWord = randomWord(words);
 
 let letterSpans = [];
 
+let badLetterSpan = [];
+
 let errorCompt = 0;
 
 let point = 0;
@@ -155,6 +157,27 @@ retrybtn.style.border = "none";
 retrybtn.style.padding = "1vw"
 retrybtn.style.textAlign = "center"
 retrybtn.style.color = "white"
+
+
+let badLetterDiv = document.createElement("div");
+badLetterDiv.style.width = "15%";
+badLetterDiv.style.padding = "2%"
+badLetterDiv.style.display = "flex"
+badLetterDiv.style.justifyContent = "space-around"
+badLetterDiv.alignItems = "center"
+badLetterDiv.marginBottom = "100%"
+row.appendChild(badLetterDiv);
+
+for (let i = 0; i < badLetter.length; i++) {
+    let span = document.createElement("span");
+    span.innerText = badLetter[i]; 
+    span.style.fontFamily = "Protest Riot";
+    span.style.fontSize = "2em";
+    span.style.padding = "5px"; 
+    span.style.margin = "5px"; 
+    span.style.border = "1px solid black"; 
+    badLetterDiv.appendChild(span);
+}    
 
 let footer = document.createElement("div");
 footer.style.backgroundColor = "#CFA06C"

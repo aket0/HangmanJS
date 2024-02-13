@@ -1,4 +1,5 @@
 let lettersGuessed = [];
+let badLetter = []
 
 function removeAccents(str) {
     return str.replace(/[àáâãäåçèéêëìíîïñòóôõöùúûüýÿ]/g, function(matched){
@@ -8,6 +9,25 @@ function removeAccents(str) {
 
 function randomWord(arr){
     return removeAccents(arr[Math.floor(Math.random() * arr.length)]);
+}
+
+function updateBadLetters() {
+    
+    badLetterDiv.innerHTML = " ";
+    
+    for (let i = 0; i < badLetter.length; i++) {
+        let span = document.createElement("span");
+        span.innerText = badLetter[i];
+        span.style.fontFamily = "Protest Riot";
+        span.style.fontSize = "2em";
+        span.style.padding = "5px";
+        span.style.margin = "5px";
+        span.style.border = "1px solid black";
+        span.style.backgroundColor = "#e05858"
+        span.style.borderRadius = "5px"
+        span.style.color = "white"
+        badLetterDiv.appendChild(span);
+    }
 }
 
 
@@ -23,7 +43,8 @@ function checkValue(value, mysteryWord, letterSpans) {
     }
    
     if (lettersGuessed.includes(value)) {
-        errorCompt += 1; 
+        errorCompt += 1;
+        
     } else {
         if (foundIndexes.length > 0) {
             foundIndexes.forEach(index => {
@@ -34,6 +55,8 @@ function checkValue(value, mysteryWord, letterSpans) {
         } else {
             
             errorCompt += 1;
+            badLetter.push(value);
+            updateBadLetters();
             
         }
         
@@ -69,15 +92,16 @@ function checkValue(value, mysteryWord, letterSpans) {
         case 9:
             img.src = "./Images/10.png"
             divSpan.style.display = "none";
-        tryBtn.style.display = "none";
-        input.style.display = "none";
-        let stat = document.createElement("h2");
-        stat.innerHTML = "😨💀 HANGED ! 💀😨"
-        stat.style.fontFamily = "Protest Riot"
-        stat.style.fontSize = "2em";
-        retrybtn.style.backgroundColor = "#F4E029"      
-        row.appendChild(stat)
-        row.appendChild(retrybtn)
+            tryBtn.style.display = "none";
+            input.style.display = "none";
+            badLetterDiv.style.display = "none"
+            let stat = document.createElement("h2");
+            stat.innerHTML = "😨💀 HANGED ! 💀😨"
+            stat.style.fontFamily = "Protest Riot"
+            stat.style.fontSize = "2em";
+            retrybtn.style.backgroundColor = "#F4E029"      
+            row.appendChild(stat)
+            row.appendChild(retrybtn)
             break;
         default:
             img.src = "./Images/default.png";
@@ -97,6 +121,7 @@ function checkWin(win){
         divSpan.style.display = "none";
         tryBtn.style.display = "none";
         input.style.display = "none";
+        badLetterDiv.style.display = "none"
         let stat = document.createElement("h2");
         stat.innerHTML = "🫵 You've beat the rope ! 🫵"
         stat.style.fontFamily = "Protest Riot"
