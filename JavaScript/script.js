@@ -24,7 +24,7 @@ function updateBadLetters() {
         span.style.margin = "5px";
         span.style.border = "1px solid black";
         span.style.backgroundColor = "#e05858"
-        span.style.borderRadius = "5px"
+        span.style.borderRadius = "5px" 
         span.style.color = "white"
         badLetterDiv.appendChild(span);
     }
